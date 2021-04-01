@@ -1,19 +1,3 @@
-# lazyleech - Telegram bot primarily to leech from torrents and upload to Telegram
-# Copyright (c) 2021 lazyleech developers <theblankx protonmail com, meliodas_bot protonmail com>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published
-# by the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 import os
 import logging
 import aiohttp
@@ -32,9 +16,9 @@ ADMIN_CHATS = os.environ.get('ADMIN_CHATS')
 ADMIN_CHATS = list(map(int, ADMIN_CHATS.split(' '))) if ADMIN_CHATS else []
 ALL_CHATS = EVERYONE_CHATS + ADMIN_CHATS
 
-PROGRESS_UPDATE_DELAY = int(os.environ.get('PROGRESS_UPDATE_DELAY', 10))
+PROGRESS_UPDATE_DELAY = int(os.environ.get('PROGRESS_UPDATE_DELAY', 1))
 MAGNET_TIMEOUT = int(os.environ.get('LEECH_TIMEOUT', 60))
-LEECH_TIMEOUT = int(os.environ.get('LEECH_TIMEOUT', 300))
+LEECH_TIMEOUT = int(os.environ.get('LEECH_TIMEOUT', 3))
 
 SOURCE_MESSAGE = '''
 <a href="https://github.com/Lazy-Leecher/lazyleech">lazyleech - Telegram bot primarily to leech from torrents and upload to Telegram</a>
