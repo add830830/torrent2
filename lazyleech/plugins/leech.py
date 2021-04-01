@@ -11,7 +11,7 @@ from ..utils.aria2 import aria2_add_torrent, aria2_tell_status, aria2_remove, ar
 from ..utils.misc import format_bytes, get_file_mimetype, return_progress_string, calculate_eta
 from ..utils.upload_worker import upload_queue, upload_statuses, progress_callback_data, upload_waits, stop_uploads
 
-@Client.on_message(filters.command(['torrent', 'ziptorrent', 'filetorrent']) & filters.chat(ALL_CHATS))
+@Client.on_message(filters.command(['torrent', 'ziptorrent', 'filetorrent', 'torrent@anu1bot', 'ziptorrent@anu1bot', 'filetorrent@anu1bot']) & filters.chat(ALL_CHATS))
 async def torrent_cmd(client, message):
     text = (message.text or message.caption).split(None, 1)
     command = text.pop(0).lower()
@@ -77,7 +77,7 @@ async def initiate_torrent(client, message, link, flags):
             os.remove(link)
     await handle_leech(client, message, gid, reply, user_id, flags)
 
-@Client.on_message(filters.command(['magnet', 'zipmagnet', 'filemagnet']) & filters.chat(ALL_CHATS))
+@Client.on_message(filters.command(['magnet', 'zipmagnet', 'filemagnet', 'magnet@anu1bot', 'zipmagnet@anu1bot', 'filemagnet@anu1bot']) & filters.chat(ALL_CHATS))
 async def magnet_cmd(client, message):
     text = (message.text or message.caption).split(None, 1)
     command = text.pop(0).lower()
