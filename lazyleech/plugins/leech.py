@@ -118,7 +118,7 @@ async def initiate_magnet(client, message, link, flags):
     else:
         await handle_leech(client, message, gid, reply, user_id, flags)
 
-@Client.on_message(filters.command(['directdl', 'direct', 'zipdirectdl', 'zipdirect', 'filedirectdl', 'filedirect']) & filters.chat(ALL_CHATS))
+@Client.on_message(filters.command(['ddl', 'ddl@anu1bot', 'zipddl@anu1bot', 'zipddl', 'fileddl@anu1bot', 'fileddl@anu1bot']) & filters.chat(ALL_CHATS))
 async def directdl_cmd(client, message):
     text = message.text.split(None, 1)
     command = text.pop(0).lower()
@@ -139,7 +139,7 @@ async def directdl_cmd(client, message):
 - /directdl <i>&lt;Direct URL&gt; | optional custom file name</i>
 - /directdl <i>(as reply to a Direct URL) | optional custom file name</i>
 - /direct <i>&lt;Direct URL&gt; | optional custom file name</i>
-- /direct <i>(as reply to a Direct URL) | optional custom file name</i>
+- /ddl <i>(as reply to a Direct URL) | optional custom file name</i>
 
 - /zipdirectdl <i>&lt;Direct URL&gt; | optional custom file name</i>
 - /zipdirectdl <i>(as reply to a Direct URL) | optional custom file name</i>
